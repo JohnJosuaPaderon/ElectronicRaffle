@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="ElectronicRaffle.CommonUi.Controls.RegisterNewTeacherControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ElectronicRaffle.CommonUi.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Background="{DynamicResource MaterialDesignPaper}" FontFamily="Roboto" MinWidth="400" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <materialDesign:Card VerticalAlignment="Stretch">
+        <DockPanel>
+            <materialDesign:TransitioningContent DockPanel.Dock="Top" OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromTop,Duration=0:0:1}">
+                <materialDesign:ColorZone Style="{StaticResource SystemWindowHeadColorZone}">
+                    <TextBlock Text="Register New Teacher" Style="{StaticResource SystemWindowHeadTextBlock}"/>
+                </materialDesign:ColorZone>
+            </materialDesign:TransitioningContent>
+            <ItemsControl Margin="100 30">
+                <ItemsControl.Resources>
+                    <Style TargetType="{x:Type materialDesign:TransitioningContent}">
+                        <Setter Property="OpeningEffect">
+                            <Setter.Value>
+                                <materialDesign:TransitionEffect Kind="SlideInFromBottom" Duration="0:0:1"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ItemsControl.Resources>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="200"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="{StaticResource GridSpacing}"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <materialDesign:TransitioningContent Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <TextBox x:Name="tbxLastName" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Last Name" CharacterCasing="Upper"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <TextBox x:Name="tbxFirstName" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="First Name" CharacterCasing="Upper"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <TextBox x:Name="tbxMiddleName" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Middle Name" CharacterCasing="Upper"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <TextBox x:Name="tbxContactNumber" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Contact No." CharacterCasing="Upper"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <ComboBox x:Name="cmbxSchool" Style="{StaticResource SystemComboBox}" materialDesign:HintAssist.Hint="School"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="10" Grid.Column="1" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <Button x:Name="btnSave" Style="{StaticResource SystemProcessButton}" Click="btnSave_Click">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="Floppy" Style="{StaticResource SystemPackIcon}"/>
+                            <Border Width="{StaticResource ControlSpacing}"/>
+                            <TextBlock Text="Save" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="10" Grid.Column="3" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <Button x:Name="btnCancel" Style="{StaticResource SystemProcessButton}" Tag="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Click="btnCancel_Click">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon Kind="Close" Style="{StaticResource SystemPackIcon}"/>
+                            <Border Width="{StaticResource ControlSpacing}"/>
+                            <TextBlock Text="Cancel" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </materialDesign:TransitioningContent>
+            </ItemsControl>
+        </DockPanel>
+    </materialDesign:Card>
+</UserControl>

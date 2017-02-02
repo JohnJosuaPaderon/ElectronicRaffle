@@ -1,0 +1,64 @@
+﻿<mahApps:MetroWindow x:Class="ElectronicRaffle.MainApplication.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:local="clr-namespace:ElectronicRaffle.MainApplication"
+                     xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                     xmlns:controls="clr-namespace:ElectronicRaffle.MainApplication.Controls"
+                     Background="{StaticResource MaterialDesignPaper}"
+                     FontFamily="Roboto" mc:Ignorable="d" WindowState="Maximized" FontSize="13"
+                     Title="Electronic Raffle V.1" TitleAlignment="Right" Height="1000" Width="1500">
+    <materialDesign:DialogHost Identifier="RootDialog">
+        <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=tbtnMenu,Path=IsChecked}">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel MinWidth="350">
+                    <materialDesign:ColorZone DockPanel.Dock="Top" Style="{StaticResource SystemWindowHeadColorZone}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="{StaticResource GridSpacing}"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Menu" Style="{StaticResource SystemWindowHeadTextBlock}"/>
+                            <ToggleButton Grid.Column="2" Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="{Binding ElementName=tbtnMenu,Path=IsChecked,Mode=TwoWay}" Height="75" Width="75"/>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                    <ListBox x:Name="lbxMenu" SelectionChanged="lbxMenu_SelectionChanged" PreviewMouseDown="lbxMenu_PreviewMouseDown">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type local:MenuItem}">
+                                <StackPanel Margin="{StaticResource ControlMargin}" Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <materialDesign:PackIcon Kind="{Binding Icon}" Height="35" Width="35" VerticalAlignment="Center"/>
+                                    <Border Width="{StaticResource ControlSpacing}"/>
+                                    <TextBlock Text="{Binding DisplayText}" Style="{StaticResource MaterialDesignBody2TextBlock}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <local:MenuItem x:Name="RegisterNewMenuItem" DisplayText="Register New" Icon="AccountPlus"/>
+                    </ListBox>
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <DockPanel>
+                <materialDesign:TransitioningContent DockPanel.Dock="Top" OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromTop,Duration=0:0:1}">
+                    <materialDesign:ColorZone x:Name="Header" Style="{StaticResource SystemWindowHeadColorZone}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="{StaticResource GridSpacing}"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton x:Name="tbtnMenu" Grid.Column="0" Style="{StaticResource MaterialDesignHamburgerToggleButton}" Height="75" Width="75"/>
+                            <TextBlock Grid.Column="2" Text="Electronic Raffle" Style="{StaticResource SystemWindowHeadTextBlock}"/>
+                        </Grid>
+                    </materialDesign:ColorZone>
+                </materialDesign:TransitioningContent>
+                <materialDesign:Transitioner SelectedIndex="0">
+                    <materialDesign:TransitionerSlide>
+                        <controls:RandomTeacherGeneratorControl/>
+                    </materialDesign:TransitionerSlide>
+                </materialDesign:Transitioner>
+            </DockPanel>
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
+</mahApps:MetroWindow>
