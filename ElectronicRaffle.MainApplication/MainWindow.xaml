@@ -9,7 +9,7 @@
                      xmlns:controls="clr-namespace:ElectronicRaffle.MainApplication.Controls"
                      Background="{StaticResource MaterialDesignPaper}"
                      FontFamily="Roboto" mc:Ignorable="d" WindowState="Maximized" FontSize="13"
-                     Title="Electronic Raffle V.1" TitleAlignment="Right" Height="1000" Width="1500">
+                     Title="Electronic Raffle V.1.3" TitleAlignment="Right" Height="1000" Width="1500">
     <materialDesign:DialogHost Identifier="RootDialog">
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=tbtnMenu,Path=IsChecked}">
             <materialDesign:DrawerHost.LeftDrawerContent>

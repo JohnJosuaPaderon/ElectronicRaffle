@@ -46,7 +46,7 @@
             <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" VerticalAlignment="Stretch">
                 <materialDesign:Transitioner x:Name="Transitioner" SelectedIndex="0" materialDesign:TransitionAssist.DisableTransitions="True" SelectionChanged="Transitioner_SelectionChanged">
                     <materialDesign:TransitionerSlide x:Name="NothingSlide">
-                        <TextBlock Text="Nothing to Show" Foreground="{DynamicResource AccentColorBrush4}" FontSize="90" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Text="Nothing to Show" Foreground="{DynamicResource AccentColorBrush4}" FontSize="90" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                     </materialDesign:TransitionerSlide>
                     <materialDesign:TransitionerSlide x:Name="SecretSlide">
                         <Image gif:ImageBehavior.AnimatedSource="../Assets/loading.gif" Stretch="Uniform"/>
