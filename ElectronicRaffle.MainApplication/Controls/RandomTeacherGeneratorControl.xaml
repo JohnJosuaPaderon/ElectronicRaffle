@@ -46,7 +46,7 @@
             <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" VerticalAlignment="Stretch">
                 <materialDesign:Transitioner x:Name="Transitioner" SelectedIndex="0" materialDesign:TransitionAssist.DisableTransitions="True" SelectionChanged="Transitioner_SelectionChanged">
                     <materialDesign:TransitionerSlide x:Name="NothingSlide">
-                        <TextBlock Text="Nothing to Show" Foreground="{DynamicResource AccentColorBrush4}" FontSize="90" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                        <TextBlock Text="Nothing to Show" Foreground="{DynamicResource AccentColorBrush4}" FontSize="90" FontWeight="Bold" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                     </materialDesign:TransitionerSlide>
                     <materialDesign:TransitionerSlide x:Name="SecretSlide">
                         <Image gif:ImageBehavior.AnimatedSource="../Assets/loading.gif" Stretch="Uniform"/>
@@ -63,7 +63,7 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="The Winner is" FontSize="50" Foreground="{StaticResource AccentColorBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            <TextBlock x:Name="tbxWinner" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="110" Foreground="{StaticResource AccentColorBrush}" FontWeight="Bold"/>
+                            <TextBlock x:Name="tbxWinner" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontSize="110" Foreground="{StaticResource AccentColorBrush}" FontWeight="Bold"/>
                             <TextBlock x:Name="tbxWinner_School" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" FontSize="50" Foreground="{DynamicResource AccentColorBrush3}" FontWeight="Bold"/>
                         </Grid>
                     </materialDesign:TransitionerSlide>
