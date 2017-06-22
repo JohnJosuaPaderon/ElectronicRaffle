@@ -49,7 +49,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <ToggleButton x:Name="tbtnMenu" Grid.Column="0" Style="{StaticResource MaterialDesignHamburgerToggleButton}" Height="75" Width="75"/>
-                            <TextBlock Grid.Column="2" Text="Electronic Raffle" Style="{StaticResource SystemWindowHeadTextBlock}"/>
+                            <TextBlock Grid.Column="2" Text="Hanapbuhay Caravan Mega Job Fair - Electronic Raffle" Style="{StaticResource SystemWindowHeadTextBlock}"/>
                         </Grid>
                     </materialDesign:ColorZone>
                 </materialDesign:TransitioningContent>
