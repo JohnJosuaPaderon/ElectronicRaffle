@@ -1,4 +1,5 @@
 ﻿using Sorschia.Data;
+using System;
 using System.Text;
 
 namespace ElectronicRaffle.Data
@@ -18,6 +19,12 @@ namespace ElectronicRaffle.Data
         private string _ContactNumber;
         private School _School;
         private bool _AlreadyPicked;
+        private string _Address;
+        private Gender _Gender;
+        private DateTime _BirthDate;
+        private EducationalAttainment _EducationalAttainment;
+        private bool _Member4Ps;
+        private string _HouseholdNumber;
 
         public string FirstName
         {
@@ -119,6 +126,84 @@ namespace ElectronicRaffle.Data
             }
         }
 
+        public string Address
+        {
+            get { return _Address; }
+            set
+            {
+                if (_Address != value)
+                {
+                    _Address = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public Gender Gender
+        {
+            get { return _Gender; }
+            set
+            {
+                if (_Gender != value)
+                {
+                    _Gender = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public DateTime BirthDate
+        {
+            get { return _BirthDate; }
+            set
+            {
+                if (_BirthDate != value)
+                {
+                    _BirthDate = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public EducationalAttainment EducationalAttainment
+        {
+            get { return _EducationalAttainment; }
+            set
+            {
+                if (_EducationalAttainment != value)
+                {
+                    _EducationalAttainment = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool Member4Ps
+        {
+            get { return _Member4Ps; }
+            set
+            {
+                if (_Member4Ps != value)
+                {
+                    _Member4Ps = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string HouseholdNumber
+        {
+            get { return _HouseholdNumber; }
+            set
+            {
+                if (_HouseholdNumber != value)
+                {
+                    _HouseholdNumber = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         private void ConstructMiddleInitial()
         {
             var middleInitialBuilder = new StringBuilder();
@@ -126,16 +211,21 @@ namespace ElectronicRaffle.Data
 
             if (hasMiddleName)
             {
-                //var splittedMiddleName = _MiddleName.Trim().Split(' ');
+                var splittedMiddleName = _MiddleName.Trim().Split(' ');
 
-                //foreach (string item in splittedMiddleName)
-                //{
-                //    if (item.Length > 0)
-                //    {
-                //        middleInitialBuilder.Append(item[0]);
-                //    }
-                //}
-                middleInitialBuilder.Append(_MiddleName);
+                foreach (string item in splittedMiddleName)
+                {
+                    if (item.Length > 0)
+                    {
+                        var c = item[0];
+
+                        if (char.IsLetter(c))
+                        {
+                            middleInitialBuilder.Append(c);
+                        }
+                    }
+                }
+                //middleInitialBuilder.Append(_MiddleName);
             }
 
             var middleInitial = middleInitialBuilder.ToString();
@@ -231,31 +321,29 @@ namespace ElectronicRaffle.Data
 
         public static bool operator ==(Teacher left, Teacher right)
         {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
+            return Equals(left, right);
         }
+
         public static bool operator !=(Teacher left, Teacher right)
         {
             return !(left == right);
         }
 
-        public override bool Equals(object arg)
+        public override bool Equals(object obj)
         {
-            if (arg is Teacher)
-            {
-                return (Teacher)arg == this;
-            }
-            return false;
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (GetType() != obj.GetType()) return false;
+
+            var value = obj as Teacher;
+            return Id.Equals(value.Id);
         }
+
         public override int GetHashCode()
         {
             return Id.GetHashCode();
         }
+
         public override string ToString()
         {
             return _FullName;
