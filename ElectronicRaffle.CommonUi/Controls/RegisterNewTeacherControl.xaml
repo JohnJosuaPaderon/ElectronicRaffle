@@ -45,6 +45,18 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="{StaticResource GridSpacing}"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="{StaticResource GridSpacing}"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" MinWidth="200"/>
@@ -70,7 +82,25 @@
                 <materialDesign:TransitioningContent Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
                     <ComboBox x:Name="cmbxSchool" Style="{StaticResource SystemComboBox}" materialDesign:HintAssist.Hint="Course"/>
                 </materialDesign:TransitioningContent>
-                <materialDesign:TransitioningContent Grid.Row="10" Grid.Column="1" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                <materialDesign:TransitioningContent Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <TextBox x:Name="tbxAddress" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Address" CharacterCasing="Upper"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <ComboBox x:Name="cmbxGender" Style="{StaticResource SystemComboBox}" materialDesign:HintAssist.Hint="Gender"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <DatePicker x:Name="dpBirthDate" Style="{StaticResource SystemDatePicker}" materialDesign:HintAssist.Hint="Birth Date"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <ComboBox x:Name="cmbxEducationAttainment" Style="{StaticResource SystemComboBox}" materialDesign:HintAssist.Hint="Educational Attainment"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <CheckBox x:Name="tbtnMember4Ps" Content="4P's Member" FontSize="14" Padding="0 10"/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                    <TextBox x:Name="tbxHouseholdNumber" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Household No."/>
+                </materialDesign:TransitioningContent>
+                <materialDesign:TransitioningContent Grid.Row="22" Grid.Column="1" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
                     <Button x:Name="btnSave" Style="{StaticResource SystemProcessButton}" Click="btnSave_Click">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <materialDesign:PackIcon Kind="Floppy" Style="{StaticResource SystemPackIcon}"/>
@@ -79,7 +109,7 @@
                         </StackPanel>
                     </Button>
                 </materialDesign:TransitioningContent>
-                <materialDesign:TransitioningContent Grid.Row="10" Grid.Column="3" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                <materialDesign:TransitioningContent Grid.Row="22" Grid.Column="3" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
                     <Button x:Name="btnCancel" Style="{StaticResource SystemProcessButton}" Tag="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Click="btnCancel_Click">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                             <materialDesign:PackIcon Kind="Close" Style="{StaticResource SystemPackIcon}"/>

@@ -48,6 +48,12 @@ namespace ElectronicRaffle.CommonUi.Controls
             var lastName = tbxLastName.Text?.Trim();
             var contactNumber = tbxContactNumber.Text?.Trim();
             var school = (School)cmbxSchool.SelectedItem;
+            var address = tbxAddress.Text?.Trim();
+            var gender = cmbxGender.SelectedItem as Gender;
+            var birthDate = dpBirthDate.SelectedDate ?? DateTime.Now;
+            var educationalAttainment = cmbxEducationAttainment.SelectedItem as EducationalAttainment;
+            var member4Ps = tbtnMember4Ps.IsChecked ?? false;
+            var householdNumber = tbxHouseholdNumber.Text?.Trim();
 
             if (school == null && !string.IsNullOrWhiteSpace(cmbxSchool.Text))
             {
@@ -64,7 +70,13 @@ namespace ElectronicRaffle.CommonUi.Controls
                 MiddleName = middleName,
                 LastName = lastName,
                 ContactNumber = contactNumber,
-                School = school
+                School = school,
+                Address = address,
+                Gender = gender,
+                BirthDate = birthDate,
+                EducationalAttainment = educationalAttainment,
+                Member4Ps = member4Ps,
+                HouseholdNumber = householdNumber
             };
 
             if (ValidateTeacher(teacher))
@@ -89,6 +101,12 @@ namespace ElectronicRaffle.CommonUi.Controls
             tbxLastName.Text = string.Empty;
             tbxContactNumber.Text = string.Empty;
             cmbxSchool.SelectedItem = null;
+            tbxAddress.Text = string.Empty;
+            cmbxGender.SelectedItem = null;
+            dpBirthDate.SelectedDate = null;
+            cmbxEducationAttainment.SelectedItem = null;
+            tbtnMember4Ps.IsChecked = false;
+            tbxHouseholdNumber.Text = string.Empty;
         }
 
         private School InsertSchool(School school)
@@ -160,6 +178,11 @@ namespace ElectronicRaffle.CommonUi.Controls
         private async void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             await LoadSchoolListAsync();
+            cmbxGender.Items.Add(Gender.Male);
+            cmbxGender.Items.Add(Gender.Female);
+            cmbxEducationAttainment.Items.Add(EducationalAttainment.Elementary);
+            cmbxEducationAttainment.Items.Add(EducationalAttainment.HighSchool);
+            cmbxEducationAttainment.Items.Add(EducationalAttainment.College);
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
