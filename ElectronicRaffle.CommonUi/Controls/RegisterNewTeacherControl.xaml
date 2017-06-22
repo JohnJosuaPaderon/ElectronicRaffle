@@ -68,7 +68,7 @@
                     <TextBox x:Name="tbxContactNumber" Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Contact No." CharacterCasing="Upper"/>
                 </materialDesign:TransitioningContent>
                 <materialDesign:TransitioningContent Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
-                    <ComboBox x:Name="cmbxSchool" Style="{StaticResource SystemComboBox}" materialDesign:HintAssist.Hint="Category"/>
+                    <ComboBox x:Name="cmbxSchool" Style="{StaticResource SystemComboBox}" materialDesign:HintAssist.Hint="Course"/>
                 </materialDesign:TransitioningContent>
                 <materialDesign:TransitioningContent Grid.Row="10" Grid.Column="1" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
                     <Button x:Name="btnSave" Style="{StaticResource SystemProcessButton}" Click="btnSave_Click">
