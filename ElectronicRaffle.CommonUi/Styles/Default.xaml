@@ -44,50 +44,50 @@
 
     <!-- Custom Styles -->
     <system:Double x:Key="ControlSpacing">20</system:Double>
-    <GridLength x:Key="GridSpacing">20</GridLength>
+    <GridLength x:Key="GridSpacing">10</GridLength>
     <Thickness x:Key="ControlMargin">20</Thickness>
 
     <Style x:Key="SystemPackIcon" TargetType="{x:Type materialDesign:PackIcon}">
-        <Setter Property="Height" Value="40"/>
-        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="30"/>
     </Style>
 
     <Style x:Key="SystemTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignTextBox}">
         <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="SystemPasswordBox" TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource MaterialDesignPasswordBox}">
         <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="SystemComboBox" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MaterialDesignComboBox}">
         <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
         <Setter Property="IsEditable" Value="True"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="SystemDatePicker" TargetType="{x:Type DatePicker}" BasedOn="{StaticResource MaterialDesignDatePicker}">
         <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
         <Setter Property="Height" Value="35"/>
         <Setter Property="VerticalContentAlignment" Value="Bottom"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="SystemProcessButton" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedButton}">
         <Setter Property="Height" Value="NaN"/>
         <Setter Property="Width" Value="NaN"/>
-        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="MinWidth" Value="100"/>
         <Setter Property="Padding" Value="{StaticResource ControlMargin}"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="SystemCancelButton" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
         <Setter Property="Height" Value="NaN"/>
         <Setter Property="Width" Value="NaN"/>
         <Setter Property="Padding" Value="{StaticResource ControlMargin}"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="SystemMetroWindow" TargetType="{x:Type mahApps:MetroWindow}">
@@ -122,13 +122,13 @@
     </Style>
 
     <Style x:Key="SystemWindowHeadTextBlock" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="50"/>
+        <Setter Property="FontSize" Value="40"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
 
     <Style x:Key="SystemGroupHeadTextBlock" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="35"/>
+        <Setter Property="FontSize" Value="25"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
