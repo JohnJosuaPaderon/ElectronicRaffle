@@ -36,6 +36,12 @@ namespace ElectronicRaffle.Data.Processes
             command.Parameters.AddWithValue("@_LastName", Teacher.LastName);
             command.Parameters.AddWithValue("@_ContactNumber", Teacher.ContactNumber);
             command.Parameters.AddWithValue("@_SchoolId", Teacher.School.Id);
+            command.Parameters.AddWithValue("@_Address", Teacher.Address);
+            command.Parameters.AddWithValue("@_Gender", Teacher.Gender?.Value);
+            command.Parameters.AddWithValue("@_BirthDate", Teacher.BirthDate);
+            command.Parameters.AddWithValue("@_EducationalAttainment", Teacher.EducationalAttainment?.Value);
+            command.Parameters.AddWithValue("@_Member4Ps", Teacher.Member4Ps);
+            command.Parameters.AddWithValue("@_HouseholdNumber", Teacher.HouseholdNumber);
             return command;
         }
 
