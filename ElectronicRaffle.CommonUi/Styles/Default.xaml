@@ -43,9 +43,9 @@
     <SolidColorBrush x:Key="IdealForegroundDisabledBrush" Color="{DynamicResource Primary500}" Opacity="0.4"/>
 
     <!-- Custom Styles -->
-    <system:Double x:Key="ControlSpacing">20</system:Double>
+    <system:Double x:Key="ControlSpacing">10</system:Double>
     <GridLength x:Key="GridSpacing">10</GridLength>
-    <Thickness x:Key="ControlMargin">20</Thickness>
+    <Thickness x:Key="ControlMargin">10</Thickness>
 
     <Style x:Key="SystemPackIcon" TargetType="{x:Type materialDesign:PackIcon}">
         <Setter Property="Height" Value="30"/>
@@ -122,13 +122,13 @@
     </Style>
 
     <Style x:Key="SystemWindowHeadTextBlock" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="FontSize" Value="30"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
 
     <Style x:Key="SystemGroupHeadTextBlock" TargetType="{x:Type TextBlock}">
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="15"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
