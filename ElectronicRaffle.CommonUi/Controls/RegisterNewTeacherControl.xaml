@@ -20,7 +20,7 @@
                     <TextBlock Text="Registration" Style="{StaticResource SystemWindowHeadTextBlock}"/>
                 </materialDesign:ColorZone>
             </materialDesign:TransitioningContent>
-            <ItemsControl Margin="100 30">
+            <ItemsControl Margin="50 20">
                 <ItemsControl.Resources>
                     <Style TargetType="{x:Type materialDesign:TransitioningContent}">
                         <Setter Property="OpeningEffect">

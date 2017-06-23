@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="ElectronicRaffle.CommonUi.Controls.ApplicantTaggingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ElectronicRaffle.CommonUi.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             MinHeight="500" Width="1000">
+    <UserControl.DataContext>
+        <local:ApplicationTaggingViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card Grid.Column="0" VerticalAlignment="Stretch" Margin="2">
+
+            </materialDesign:Card>
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <materialDesign:Card VerticalAlignment="Stretch" Margin="2">
+                        <StackPanel>
+                            <materialDesign:ColorZone Style="{DynamicResource SystemGroupHeadColorZone}">
+                                <TextBlock Text="Personal Info" Style="{DynamicResource SystemGroupHeadTextBlock}"/>
+                            </materialDesign:ColorZone>
+                            <StackPanel Margin="2">
+                                <StackPanel.Resources>
+                                    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource SystemTextBox}">
+                                        <Setter Property="IsReadOnly" Value="True"/>
+                                        <Setter Property="Margin" Value="2"/>
+                                    </Style>
+                                </StackPanel.Resources>
+                                <TextBox materialDesign:HintAssist.Hint="Applicant's Name"/>
+                                <TextBox materialDesign:HintAssist.Hint="Contact No."/>
+                                <TextBox materialDesign:HintAssist.Hint="Course"/>
+                                <TextBox materialDesign:HintAssist.Hint="Address"/>
+                                <TextBox materialDesign:HintAssist.Hint="Gender"/>
+                                <TextBox materialDesign:HintAssist.Hint="Birth Date"/>
+                                <TextBox materialDesign:HintAssist.Hint="Educational Attainment"/>
+                                <TextBox materialDesign:HintAssist.Hint="4P's Member"/>
+                                <TextBox materialDesign:HintAssist.Hint="Household No."/>
+                            </StackPanel>
+                        </StackPanel>
+                    </materialDesign:Card>
+                    <materialDesign:Card Margin="2">
+                        <StackPanel>
+                            <materialDesign:ColorZone Style="{DynamicResource SystemGroupHeadColorZone}">
+                                <TextBlock Text="Status" Style="{DynamicResource SystemGroupHeadTextBlock}"/>
+                            </materialDesign:ColorZone>
+                            <StackPanel Margin="2">
+                                <StackPanel.Resources>
+                                    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource SystemComboBox}">
+                                        <Setter Property="Margin" Value="2"/>
+                                    </Style>
+                                    <Style TargetType="{x:Type DatePicker}" BasedOn="{StaticResource SystemDatePicker}">
+                                        <Setter Property="Margin" Value="2"/>
+                                    </Style>
+                                </StackPanel.Resources>
+                                <ComboBox materialDesign:HintAssist.Hint="Status"/>
+                                <ComboBox materialDesign:HintAssist.Hint="Company"/>
+                                <DatePicker materialDesign:HintAssist.Hint="Date"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </materialDesign:Card>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="1" Margin="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="Save" Style="{DynamicResource SystemProcessButton}"/>
+            <Button Grid.Column="3" Content="Cancel" Style="{DynamicResource SystemProcessButton}" Command="{Binding CancelCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>
