@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="Data\ApplicantStatus.cs" />
     <Compile Include="Data\Collections\SchoolCollection.cs" />
     <Compile Include="Data\Collections\TeacherCollection.cs" />
+    <Compile Include="Data\Company.cs" />
     <Compile Include="Data\EducationalAttainment.cs" />
     <Compile Include="Data\Gender.cs" />
     <Compile Include="Data\Processes\GenerateRandomTeacherPick.cs" />
