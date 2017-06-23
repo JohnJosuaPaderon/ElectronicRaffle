@@ -68,8 +68,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ApplicantTaggingControl.xaml.cs">
+      <DependentUpon>ApplicantTaggingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ApplicationTaggingViewModel.cs" />
     <Compile Include="Controls\RegisterNewTeacherControl.xaml.cs">
       <DependentUpon>RegisterNewTeacherControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RelayCommand.cs" />
+    <Compile Include="HostWindow.xaml.cs">
+      <DependentUpon>HostWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -96,7 +104,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\ApplicantTaggingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\RegisterNewTeacherControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HostWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
