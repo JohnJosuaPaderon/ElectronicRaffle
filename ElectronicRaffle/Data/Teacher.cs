@@ -25,6 +25,9 @@ namespace ElectronicRaffle.Data
         private EducationalAttainment _EducationalAttainment;
         private bool _Member4Ps;
         private string _HouseholdNumber;
+        private Company _Company;
+        private ApplicantStatus _ApplicantStatus;
+        private DateTime? _DateHired;
 
         public string FirstName
         {
@@ -199,6 +202,32 @@ namespace ElectronicRaffle.Data
                 if (_HouseholdNumber != value)
                 {
                     _HouseholdNumber = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public Company Company
+        {
+            get { return _Company; }
+            set
+            {
+                if (_Company != value)
+                {
+                    _Company = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public ApplicantStatus ApplicantStatus
+        {
+            get { return _ApplicantStatus; }
+            set
+            {
+                if (_ApplicantStatus != value)
+                {
+                    _ApplicantStatus = value;
                     OnPropertyChanged();
                 }
             }
