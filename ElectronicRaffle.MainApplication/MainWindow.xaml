@@ -36,6 +36,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                         <local:MenuItem x:Name="RegisterNewMenuItem" DisplayText="Register New" Icon="AccountPlus"/>
+                        <local:MenuItem x:Name="TagApplicationMenuItem" DisplayText="Applicant Tagging" Icon="Account"/>
                     </ListBox>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>

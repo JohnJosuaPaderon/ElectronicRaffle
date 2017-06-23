@@ -1,4 +1,5 @@
 ﻿using ElectronicRaffle;
+using ElectronicRaffle.CommonUi;
 using ElectronicRaffle.CommonUi.Controls;
 using MahApps.Metro.Controls;
 using MaterialDesignThemes.Wpf;
@@ -42,6 +43,10 @@ namespace ElectronicRaffle.MainApplication
             if (SelectedMenuItem == RegisterNewMenuItem)
             {
                 DialogHost.Show(new RegisterNewTeacherControl(), "RootDialog");
+            }
+            if (SelectedMenuItem == TagApplicationMenuItem)
+            {
+                DialogHost.Show(new ApplicantTaggingControl(), "RootDialog");
             }
         }
 
