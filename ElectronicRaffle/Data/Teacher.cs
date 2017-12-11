@@ -27,7 +27,6 @@ namespace ElectronicRaffle.Data
         private string _HouseholdNumber;
         private Company _Company;
         private ApplicantStatus _ApplicantStatus;
-        private DateTime? _DateHired;
 
         public string FirstName
         {
