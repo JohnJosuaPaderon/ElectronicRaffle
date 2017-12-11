@@ -11,12 +11,7 @@ namespace ElectronicRaffle.Data.Processes
         #region Constructor
         public InsertSchool(School school)
         {
-            if (school == null)
-            {
-                throw new ArgumentNullException("Cannot be null.", nameof(School));
-            }
-
-            School = school;
+            School = school ?? throw new ArgumentNullException("Cannot be null.", nameof(School));
             Utilities = new MySqlUtilities(Configuration.ConnectionString);
         }
         #endregion
