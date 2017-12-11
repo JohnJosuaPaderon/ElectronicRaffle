@@ -18,14 +18,9 @@ namespace ElectronicRaffle.Data.Collections
 
         internal TeacherCollection(School school)
         {
-            if (school == null)
-            {
-                throw new ArgumentNullException(nameof(School));
-            }
-
             TeacherList = new List<Teacher>();
             Dependent = true;
-            School = school;
+            School = school ?? throw new ArgumentNullException(nameof(School));
         }
         #endregion
 
