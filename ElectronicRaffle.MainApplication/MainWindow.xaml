@@ -9,7 +9,7 @@
                      xmlns:controls="clr-namespace:ElectronicRaffle.MainApplication.Controls"
                      Background="{StaticResource MaterialDesignPaper}"
                      FontFamily="Roboto" mc:Ignorable="d" WindowState="Maximized" FontSize="13"
-                     Title="Electronic Raffle V.1.4" TitleAlignment="Right" Height="1000" Width="1500">
+                     Title="Electronic Raffle V.2.0" TitleAlignment="Right" Height="1000" Width="1500" Loaded="MetroWindow_Loaded">
     <materialDesign:DialogHost Identifier="RootDialog">
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=tbtnMenu,Path=IsChecked}">
             <materialDesign:DrawerHost.LeftDrawerContent>
@@ -50,7 +50,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <ToggleButton x:Name="tbtnMenu" Grid.Column="0" Style="{StaticResource MaterialDesignHamburgerToggleButton}" Height="75" Width="75"/>
-                            <TextBlock Grid.Column="2" Text="Mega Job Fair" Style="{StaticResource SystemWindowHeadTextBlock}"/>
+                            <TextBlock x:Name="HeaderText" Grid.Column="2" Text="City Government of Navotas" Style="{StaticResource SystemWindowHeadTextBlock}"/>
                         </Grid>
                     </materialDesign:ColorZone>
                 </materialDesign:TransitioningContent>

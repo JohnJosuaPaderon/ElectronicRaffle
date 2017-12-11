@@ -59,5 +59,10 @@ namespace ElectronicRaffle.MainApplication
         {
             DisplaySelectedMenuItem();
         }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            HeaderText.Text = ConfigurationManager.AppSettings["HeaderText"];
+        }
     }
 }
