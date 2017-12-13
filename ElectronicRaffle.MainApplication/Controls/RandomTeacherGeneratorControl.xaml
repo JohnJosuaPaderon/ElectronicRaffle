@@ -49,7 +49,10 @@
                         <TextBlock Text="Nothing to Show" Foreground="{DynamicResource AccentColorBrush4}" FontSize="90" FontWeight="Bold" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
                     </materialDesign:TransitionerSlide>
                     <materialDesign:TransitionerSlide x:Name="SecretSlide">
-                        <Image gif:ImageBehavior.AnimatedSource="../Assets/loading.gif" Stretch="Uniform"/>
+                        <Grid>
+                            <Image gif:ImageBehavior.AnimatedSource="../Assets/loading.gif" Stretch="Uniform"/>
+                            <MediaElement x:Name="DrumRollSound" Source="C:\drumroll.mp3" Volume="100" MediaFailed="DrumRollSound_MediaFailed" LoadedBehavior="Manual"/>
+                        </Grid>
                         <!--<MediaElement Source="../Assets/loading.gif" LoadedBehavior="Play" UnloadedBehavior="Play"/>-->
                         <!--<TextBlock Text="?" Foreground="{DynamicResource AccentColorBrush}" FontSize="200" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
                     </materialDesign:TransitionerSlide>

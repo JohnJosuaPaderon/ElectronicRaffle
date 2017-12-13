@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace ElectronicRaffle.MainApplication.Controls
 {
@@ -19,12 +20,21 @@ namespace ElectronicRaffle.MainApplication.Controls
         public RandomTeacherGeneratorControl()
         {
             InitializeComponent();
-            RevealTimer = new Timer(3000);
+            RevealTimer = new Timer(4000);
             RevealTimer.Elapsed += RevealTimer_Elapsed;
+            _MediaPlayer = new MediaPlayer();
+        }
+
+        private readonly MediaPlayer _MediaPlayer;
+
+        private void Invoke(Action callback)
+        {
+            Application.Current.Dispatcher.Invoke(callback);
         }
 
         private void RevealTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            Invoke(DrumRollSound.Stop);
             RevealTimer.Stop();
             btnReveal_Click(this, new RoutedEventArgs());
         }
@@ -86,6 +96,7 @@ namespace ElectronicRaffle.MainApplication.Controls
 
                         //btnReveal_Click(this, new RoutedEventArgs());
                     }
+                    DrumRollSound.Play();
                     Transitioner.SelectedItem = SecretSlide;
                     RevealTimer.Start();
                 }
@@ -134,6 +145,11 @@ namespace ElectronicRaffle.MainApplication.Controls
                 //btnReveal.Visibility = Visibility.Collapsed;
                 btnGenerate.Visibility = Visibility.Visible;
             }
+        }
+
+        private void DrumRollSound_MediaFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+
         }
     }
 }
